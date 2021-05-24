@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+{% block body %}
+    <!-- Header -->
+
+    <header>
+        <div>
+            <img src="{{ absolute_url(asset ('img/logo.png')) }}" alt="">
+            <h1>Primers passos amb Symfony</h1>
+            <hr>
+            <h2>Pràctica per aprendre els conceptes bàsics de Symfony</h2>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section>
+        <!-- Navigation -->
+<nav>
+    <a href="{{ path('home') }}">Inici</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="{{ path('categoria_list') }}">categoria</a>
+    <a href="{{ path('coches_list') }}">coches</a>
+</nav>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+{% block body %}
+    <!-- Header -->
+
+    <header>
+        <div>
+            <h1>Rutas Web Service</h1>
+            <hr>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section>
+        <!-- Navigation -->
+<nav>
+    <a href="{{ path('home') }}">Inici</a>&nbsp;&nbsp;&nbsp;
+    <br><hr><br>
+    <a href="{{ path('categoria') }}">categoria</a>
+    
+    <br><hr><br>
+    <a href="{{ path('coche') }}">coches</a>
+</nav>
+    </section>
+
+{% endblock %}

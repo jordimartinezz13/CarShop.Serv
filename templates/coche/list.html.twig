@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Llistat de coches{% endblock %}
+{% block body %}
+        <h1>Llistat de coches</h1>
+
+
+        {% if searchTerm is defined %}
+          <p>Resultats de cerca per: <strong>{{ searchTerm }}</strong></p>
+          <a href="{{ path('coche_list') }}">x Esborrar resultats</a>
+        {% endif %}
+
+            {% for message in app.flashes('notice') %}
+                  <strong>Success!</strong> {{ message }}
+            {% endfor %}
+
+            <table style="margin-top: 20px;margin-bottom: 10px;">
+                <thead>
+                    <tr>
+                        <th>id</th><th>categoria_id</th><th>imatge</th><th>Nom</th><th>preu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for coche in coches %}
+                        <tr>
+                            <td>{{ coche.id }}</td><td>{{ coche.categoria.id }} - {{ coche.categoria.nom }}</td><td>{{ coche.imatge }}</td><td>{{ coche.nom }}</td><td>{{ coche.preu }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">No hay coches.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <br>
+
+
+
+{% endblock %}
